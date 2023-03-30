@@ -25,4 +25,17 @@ module.exports = {
         https : false
 
     },
+    Plugins : [
+        new HtmlWebpackPlugin({
+            template : 'src/index.html',
+            favicon : 'src/favicon.ico'
+        }),
+    ],
+
+    module: {
+        rules: [
+            { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] }
+        ]
+    }
 };
